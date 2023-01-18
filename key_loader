@@ -1,0 +1,164 @@
+function Load_Key(key,callback)
+    local Muimi = Instance.new("ScreenGui")
+    local Background_Main = Instance.new("Frame")
+    local UIGradient = Instance.new("UIGradient")
+    local UICorner = Instance.new("UICorner")
+    local TextLabel = Instance.new("TextLabel")
+    local Get_Key_Page = Instance.new("Frame")
+    local Key_Input = Instance.new("TextBox")
+    local UICorner_2 = Instance.new("UICorner")
+    local TextButton = Instance.new("TextButton")
+    local UICorner_3 = Instance.new("UICorner")
+    local TextButton_2 = Instance.new("TextButton")
+    local UICorner_4 = Instance.new("UICorner")
+    local TextLabel_2 = Instance.new("TextLabel")
+    local Load_Page = Instance.new("Frame")
+    local Load_Text = Instance.new("TextLabel")
+    
+    
+    Muimi.Name = "Muimi"
+    Muimi.Parent = game.CoreGui
+    Muimi.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    Background_Main.Name = "Background_Main"
+    Background_Main.Parent = Muimi
+    Background_Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Background_Main.Position = UDim2.new(0.210053861, 0, 0.380219787, 0)
+    Background_Main.Size = UDim2.new(0, 459, 0, 291)
+    
+    UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(39, 39, 39)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(21, 14, 19))}
+    UIGradient.Rotation = 90
+    UIGradient.Parent = Background_Main
+    
+    UICorner.Parent = Background_Main
+    
+    TextLabel.Parent = Background_Main
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.Position = UDim2.new(0.0544662289, 0, 0.0378006846, 0)
+    TextLabel.Size = UDim2.new(0, 409, 0, 22)
+    TextLabel.Font = Enum.Font.FredokaOne
+    TextLabel.Text = "Muimi Hub"
+    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.TextSize = 24.000
+    TextLabel.TextStrokeTransparency = 0.600
+    
+    Get_Key_Page.Name = "Get_Key_Page"
+    Get_Key_Page.Parent = Background_Main
+    Get_Key_Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Get_Key_Page.BackgroundTransparency = 1.000
+    Get_Key_Page.Position = UDim2.new(0.0239651408, 0, 0.137457043, 0)
+    Get_Key_Page.Size = UDim2.new(0, 441, 0, 240)
+    
+    if key == nil then
+        Get_Key_Page.Visible = false
+    end
+    
+    Key_Input.Name = "Key_Input"
+    Key_Input.Parent = Get_Key_Page
+    Key_Input.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    Key_Input.Position = UDim2.new(0.158730149, 0, 0.333333343, 0)
+    Key_Input.Size = UDim2.new(0, 296, 0, 50)
+    Key_Input.Font = Enum.Font.FredokaOne
+    Key_Input.PlaceholderText = "Input Key Here!"
+    Key_Input.Text = ""
+    Key_Input.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Key_Input.TextSize = 23.000
+    Key_Input.TextStrokeTransparency = 0.210
+    Key_Input.TextWrapped = true
+    
+    UICorner_2.Parent = Key_Input
+    
+    TextButton.Parent = Get_Key_Page
+    TextButton.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+    TextButton.Position = UDim2.new(0.0566893369, 0, 0.716666698, 0)
+    TextButton.Size = UDim2.new(0, 190, 0, 42)
+    TextButton.Font = Enum.Font.FredokaOne
+    TextButton.Text = "Join Discord"
+    TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextButton.TextSize = 21.000
+    TextButton.TextStrokeTransparency = 0.600
+    
+    UICorner_3.Parent = TextButton
+    
+    TextButton_2.Parent = Get_Key_Page
+    TextButton_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+    TextButton_2.Position = UDim2.new(0.528344631, 0, 0.716666698, 0)
+    TextButton_2.Size = UDim2.new(0, 190, 0, 42)
+    TextButton_2.Font = Enum.Font.FredokaOne
+    TextButton_2.Text = "Get Key"
+    TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextButton_2.TextSize = 21.000
+    TextButton_2.TextStrokeTransparency = 0.600
+    
+    UICorner_4.Parent = TextButton_2
+    
+    TextLabel_2.Parent = Get_Key_Page
+    TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel_2.BackgroundTransparency = 1.000
+    TextLabel_2.Position = UDim2.new(0.0295229219, 0, 0.0951460525, 0)
+    TextLabel_2.Size = UDim2.new(0, 409, 0, 40)
+    TextLabel_2.Font = Enum.Font.FredokaOne
+    TextLabel_2.Text = "Press Get Key! Button / Copy into ur clipboard!"
+    TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel_2.TextSize = 19.000
+    TextLabel_2.TextStrokeTransparency = 0.600
+    TextLabel_2.TextWrapped = true
+    
+    Load_Page.Name = "Load_Page"
+    Load_Page.Parent = Background_Main
+    Load_Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Load_Page.BackgroundTransparency = 1.000
+    Load_Page.Position = UDim2.new(0.0239651408, 0, 0.137457043, 0)
+    Load_Page.Size = UDim2.new(0, 441, 0, 240)
+    Load_Page.Visible = false
+    
+    Load_Text.Name = "Load_Text"
+    Load_Text.Parent = Load_Page
+    Load_Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Load_Text.BackgroundTransparency = 1.000
+    Load_Text.Position = UDim2.new(0.0295228846, 0, 0.375300705, 0)
+    Load_Text.Size = UDim2.new(0, 409, 0, 29)
+    Load_Text.Font = Enum.Font.FredokaOne
+    Load_Text.Text = "Loading . . ."
+    Load_Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Load_Text.TextSize = 26.000
+    Load_Text.TextStrokeTransparency = 0.600
+    
+    Key_Input:GetPropertyChangedSignal("Text"):Connect(function()
+        if Key_Input.Text == key then
+           Get_Key_Page.Visible = false
+           --
+           Load_Page.Visible = true
+           
+           pcall(callback , true)
+        end
+    end)
+    
+    Key_Input.FocusLost:Connect(function()
+        if Key_Input.Text ~= key then
+             
+            Get_Key_Page.Visible = false
+           --
+           Load_Page.Visible = true
+           
+           for i = 1,10 do wait(.1)
+           Load_Text.Text = "Key is wrong . . ."
+           wait(.1)
+           Load_Text.Text = "Key is wrong . ."
+           wait(.1)
+           Load_Text.Text = "Key is wrong ."
+           end
+           
+           Load_Page.Visible = false
+           Get_Key_Page.Visible = true
+          end
+          end)
+    if key == nil then
+        Load_Page.Visible = true
+    end
+    
+    return Load_Text
+end
+
+return Load_Key

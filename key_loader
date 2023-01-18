@@ -1,4 +1,4 @@
-function Load_Key(key,callback)
+return function(key,callback)
     local Muimi = Instance.new("ScreenGui")
     local Background_Main = Instance.new("Frame")
     local UIGradient = Instance.new("UIGradient")

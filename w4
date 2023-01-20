@@ -86,11 +86,11 @@ library.theme = {
 				end
 				
 				function configSystem:Load()
-				local Success = pcall(readfile, configSystem.configFolder .. "/" .. "/Config_"..name.. ".txt")
+				local Success = pcall(readfile, configSystem.configFolder.."/Config_"..name..".txt")
 					
 					if (Success) then
 						pcall(function()
-							local ReadConfig = httpservice:JSONDecode(readfile(configSystem.configFolder .. "/" .. "/Config_".. ".txt"))
+							local ReadConfig = httpservice:JSONDecode(readfile(configSystem.configFolder.."/Config_"..name..".txt"))
 							local NewConfig = {}
 							for i, v in pairs(ReadConfig) do
 								if (typeof(v) == "table") then
@@ -145,7 +145,7 @@ library.theme = {
 								end
 							end
 						end
-						writefile(configSystem.configFolder .. "/" .. "/Config_"..name.. ".txt", httpservice:JSONEncode(config))
+						writefile(configSystem.configFolder.."/Config_"..name..".txt", httpservice:JSONEncode(config))
 					end
 					
 				return configSystem

@@ -322,9 +322,68 @@ library.theme = {
 		window.Main = Instance.new("ScreenGui", coregui)
 		window.Main.Name = name
 		window.Main.DisplayOrder = 15
-		if syn then
-			syn.protect_gui(window.Main)
+		
+		if game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled and not game:GetService("UserInputService").MouseEnabled and not game:GetService("UserInputService").GamepadEnabled then
+
+        	local Button_Hide = Instance.new("ScreenGui")
+        	local Toggle = Instance.new("TextButton")
+        	local UIGradient = Instance.new("UIGradient")
+        	local TextLabel = Instance.new("TextLabel")
+        	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+        	local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+        	local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+        	local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+        
+        	Button_Hide.Name = "Button_Hide"
+        	Button_Hide.Parent = game.CoreGui
+        	Button_Hide.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        
+        	Toggle.Name = "Toggle"
+        	Toggle.Parent = Button_Hide
+        	Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        	Toggle.BorderSizePixel = 0
+        	Toggle.Position = UDim2.new(0.124400869, 0, 0.172603875, 0)
+        	Toggle.Size = UDim2.new(0.0400957502, 0, 0.0827160478, 0)
+        	Toggle.Font = Enum.Font.SourceSans
+        	Toggle.Text = ""
+        	Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+        	Toggle.TextScaled = true
+        	Toggle.TextSize = 14.000
+        	Toggle.TextWrapped = true
+        	Toggle.MouseButton1Down:Connect(function()
+        		game.CoreGui:FindFirstChild(name).Enabled = not game.CoreGui:FindFirstChild(name).Enabled
+        	end)
+        	
+        	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(46, 235, 136)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(39, 217, 173))}
+        	UIGradient.Rotation = 83
+        	UIGradient.Parent = Toggle
+        
+        	TextLabel.Parent = Toggle
+        	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        	TextLabel.BackgroundTransparency = 1.000
+        	TextLabel.Position = UDim2.new(0, 0, 0.179104492, 0)
+        	TextLabel.Size = UDim2.new(1, 0, 0.626865685, 0)
+        	TextLabel.Font = Enum.Font.FredokaOne
+        	TextLabel.Text = "GUI Toggle"
+        	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        	TextLabel.TextScaled = true
+        	TextLabel.TextSize = 20.000
+        	TextLabel.TextStrokeTransparency = 0.570
+        	TextLabel.TextWrapped = true
+        
+        	UIAspectRatioConstraint.Parent = TextLabel
+        	UIAspectRatioConstraint.AspectRatio = 1.595
+        
+        	UITextSizeConstraint.Parent = TextLabel
+        	UITextSizeConstraint.MaxTextSize = 20
+        
+        	UIAspectRatioConstraint_2.Parent = Toggle
+        
+        	UITextSizeConstraint_2.Parent = Toggle
+        	UITextSizeConstraint_2.MaxTextSize = 14
+        	
 		end
+    
 		if getgenv().uilib then
 			getgenv().uilib:Remove()
 		end

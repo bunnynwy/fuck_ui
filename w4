@@ -326,7 +326,82 @@ local library = {
 		window.Main = Instance.new("ScreenGui", coregui)
 		window.Main.Name = name
 		window.Main.DisplayOrder = 15
-		if syn then
+
+        --
+
+
+                --
+        -- Gui to Lua
+        -- Version: 3.2
+
+        -- Instances:
+
+        local MobileUI = Instance.new("ScreenGui")
+        local TextButton = Instance.new("TextButton")
+        local UICorner = Instance.new("UICorner")
+        local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+        local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+        local UIGradient = Instance.new("UIGradient")
+        local TextLabel = Instance.new("TextLabel")
+        local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+        local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+
+        --Properties:
+
+        MobileUI.Name = "MobileUI"
+        MobileUI.Parent = game.CoreGui
+        MobileUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+        TextButton.Parent = MobileUI
+        TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextButton.Position = UDim2.new(0.0116279069, 0, 0.292592585, 0)
+        TextButton.Size = UDim2.new(0.114911079, 0, 0.0370370373, 0)
+        TextButton.Font = Enum.Font.SourceSans
+        TextButton.Text = ""
+        TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextButton.TextScaled = true
+        TextButton.TextSize = 14.000
+        TextButton.TextWrapped = true
+
+        UICorner.CornerRadius = UDim.new(0.200000003, 0)
+        UICorner.Parent = TextButton
+
+        UIAspectRatioConstraint.Parent = TextButton
+        UIAspectRatioConstraint.AspectRatio = 5.600
+
+        UITextSizeConstraint.Parent = TextButton
+        UITextSizeConstraint.MaxTextSize = 14
+
+        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 174, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 255, 157))}
+        UIGradient.Rotation = 90
+        UIGradient.Parent = TextButton
+
+        TextLabel.Parent = TextButton
+        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.BackgroundTransparency = 1.000
+        TextLabel.Position = UDim2.new(0.0238095243, 0, 0.166666672, 0)
+        TextLabel.Size = UDim2.new(0.946428597, 0, 0.666666687, 0)
+        TextLabel.Font = Enum.Font.GothamMedium
+        TextLabel.Text = "Muimi Hub"
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.TextScaled = true
+        TextLabel.TextSize = 14.000
+        TextLabel.TextWrapped = true
+
+        UIAspectRatioConstraint_2.Parent = TextLabel
+        UIAspectRatioConstraint_2.AspectRatio = 7.950
+
+        UITextSizeConstraint_2.Parent = TextLabel
+        UITextSizeConstraint_2.MaxTextSize = 14
+        TextButton.MouseButton1Click:Connect(function()
+            if game.CoreGui:FindFirstChild(name) then
+                game.CoreGui:FindFirstChild(name).Enabled = not game.CoreGui:FindFirstChild(name).Enabled
+            end
+        end)
+        --
+
+        --
+        if syn then
 			syn.protect_gui(window.Main)
 		end
 		if getgenv().uilib then

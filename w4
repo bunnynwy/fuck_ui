@@ -329,7 +329,11 @@ local library = {
 
         --
 
-
+        local UIS = game:GetService("UserInputService")
+        local GuiService = game:GetService("GuiService")
+        
+        if UIS.TouchEnabled and not UIS.KeyboardEnabled and not UIS.MouseEnabled
+           and not UIS.GamepadEnabled and not GuiService:IsTenFootInterface() then
                 --
         -- Gui to Lua
         -- Version: 3.2
@@ -392,14 +396,14 @@ local library = {
         UIAspectRatioConstraint_2.AspectRatio = 7.950
 
         UITextSizeConstraint_2.Parent = TextLabel
-        UITextSizeConstraint_2.MaxTextSize = 14
+        UITextSizeConstraint_2.MaxTextSize = 14a
         TextButton.MouseButton1Click:Connect(function()
             if game.CoreGui:FindFirstChild(name) then
                 game.CoreGui:FindFirstChild(name).Enabled = not game.CoreGui:FindFirstChild(name).Enabled
             end
         end)
         --
-
+    end
         --
         if syn then
 			syn.protect_gui(window.Main)

@@ -3365,4 +3365,8 @@ local library = {
 		return window
 	end
 
+if game:GetService("UserInputService").TouchEnabled == true then
+return loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/GUI56"))()
+else
 return library
+end

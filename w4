@@ -3364,7 +3364,323 @@ local library = {
 		end
 		return window
 	end
+repeat wait() until game:IsLoaded()
+if not game:GetService("CoreGui"):FindFirstChild("StatBySmell") then
+local function RainbowText(text)
+	spawn(function()
+		local add = 10
+		wait(0.1)
+		local k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(k / 255, NaN, NaN)
+			k = k + add
+			wait()
+		end
+		while true do
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(255 / 255, k / 255, NaN)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new((255 / 255) - (k / 255), 255 / 255, NaN)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(NaN, 255 / 255, k / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(NaN, (255 / 255) - (k / 255), 255 / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(k / 255, NaN, 255 / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(255 / 255, NaN, (255 / 255) - (k / 255))
+				k = k + add
+				wait()
+			end
+			while k <= 255 do
+				text.TextColor3 = Color3.new((255 / 255) - (k / 255), NaN, NaN)
+				k = k + add
+				wait()
+			end
+		end
+	end)
+end
+local function RainbowImage(ImageColor)
+	spawn(function()
+		local add = 10
+		wait(0.1)
+		local k = 1
+		while k <= 255 do
+			ImageColor.ImageColor3 = Color3.new(k / 255, NaN, NaN)
+			k = k + add
+			wait()
+		end
+		while true do
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(255 / 255, k / 255, NaN)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new((255 / 255) - (k / 255), 255 / 255, NaN)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(NaN, 255 / 255, k / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(NaN, (255 / 255) - (k / 255), 255 / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(k / 255, NaN, 255 / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(255 / 255, NaN, (255 / 255) - (k / 255))
+				k = k + add
+				wait()
+			end
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new((255 / 255) - (k / 255), NaN, NaN)
+				k = k + add
+				wait()
+			end
+		end
+	end)
+end
+-- Gui to Lua
+-- Version: 3.2
 
+-- Instances:
+
+local GuiStat = Instance.new("ScreenGui")
+local TopbarContainer = Instance.new("Frame")
+local _1FPSCount = Instance.new("Frame")
+local IconButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local IconLabel = Instance.new("TextLabel")
+local _3PingCount = Instance.new("Frame")
+local IconButton_2 = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local IconLabel_2 = Instance.new("TextLabel")
+local UIListLayout = Instance.new("UIListLayout")
+local _2ToggleMenu = Instance.new("Frame")
+local IconButton_3 = Instance.new("TextButton")
+local IconImage = Instance.new("ImageLabel")
+local IconLabel_3 = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+GuiStat.Name = "StatBySmell"
+GuiStat.Parent = game:GetService("CoreGui")
+GuiStat.ResetOnSpawn = false
+GuiStat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+GuiStat.IgnoreGuiInset = true
+GuiStat.AutoLocalize = true
+GuiStat.ZIndexBehavior = "Global"
+GuiStat.ScreenInsets = "DeviceSafeInsets"
+
+TopbarContainer.Name = "Frame"
+TopbarContainer.Parent = GuiStat
+TopbarContainer.BackgroundTransparency = 1.000
+TopbarContainer.Position = UDim2.new(0.105, 0, 0, 3)
+TopbarContainer.Size = UDim2.new(0.800000012, 0, 0.0299999993, 0)
+
+_1FPSCount.Name = "1FPSCount"
+_1FPSCount.Parent = TopbarContainer
+_1FPSCount.BackgroundTransparency = 1.000
+_1FPSCount.LayoutOrder = 7
+_1FPSCount.Position = UDim2.new(0, 265, 0, 4)
+_1FPSCount.Size = UDim2.new(0, 86, 0, 32)
+
+IconButton.Name = "IconButton"
+IconButton.Parent = _1FPSCount
+IconButton.Active = false
+IconButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IconButton.BackgroundTransparency = 0.500
+IconButton.BorderSizePixel = 0
+IconButton.Size = UDim2.new(1, 0, 1, 0)
+IconButton.ZIndex = 10
+IconButton.AutoButtonColor = false
+IconButton.Text = ""
+IconButton.TextTransparency = 1.000
+
+UICorner.Parent = IconButton
+
+IconLabel.Name = "IconLabel"
+IconLabel.Parent = IconButton
+IconLabel.AnchorPoint = Vector2.new(0, 0.5)
+IconLabel.BackgroundTransparency = 1.000
+IconLabel.ClipsDescendants = true
+IconLabel.Position = UDim2.new(0, 12, 0.5, 0)
+IconLabel.Size = UDim2.new(1, -24, 0.449999988, 7)
+IconLabel.ZIndex = 11
+IconLabel.Font = Enum.Font.GothamMedium
+IconLabel.Text = "FPS: 0"
+IconLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+IconLabel.TextSize = 14.000
+
+_3PingCount.Name = "3PingCount"
+_3PingCount.Parent = TopbarContainer
+_3PingCount.BackgroundTransparency = 1.000
+_3PingCount.LayoutOrder = 8
+_3PingCount.Position = UDim2.new(0, 363, 0, 4)
+_3PingCount.Size = UDim2.new(0, 107, 0, 32)
+
+IconButton_2.Name = "IconButton"
+IconButton_2.Parent = _3PingCount
+IconButton_2.Active = false
+IconButton_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IconButton_2.BackgroundTransparency = 0.500
+IconButton_2.BorderSizePixel = 0
+IconButton_2.Size = UDim2.new(1, 0, 1, 0)
+IconButton_2.ZIndex = 10
+IconButton_2.AutoButtonColor = false
+IconButton_2.Text = ""
+IconButton_2.TextTransparency = 1.000
+
+UICorner_2.Parent = IconButton_2
+
+IconLabel_2.Name = "IconLabel"
+IconLabel_2.Parent = IconButton_2
+IconLabel_2.AnchorPoint = Vector2.new(0, 0.5)
+IconLabel_2.BackgroundTransparency = 1.000
+IconLabel_2.ClipsDescendants = true
+IconLabel_2.Position = UDim2.new(0, 12, 0.5, 0)
+IconLabel_2.Size = UDim2.new(1, -24, 0.449999988, 7)
+IconLabel_2.ZIndex = 11
+IconLabel_2.Font = Enum.Font.GothamMedium
+IconLabel_2.Text = "Ping: 0 ms"
+IconLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+IconLabel_2.TextSize = 14.000
+
+UIListLayout.Parent = TopbarContainer
+UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 10)
+
+_2ToggleMenu.Name = "2ToggleMenu"
+_2ToggleMenu.Parent = TopbarContainer
+_2ToggleMenu.BackgroundTransparency = 1.000
+_2ToggleMenu.LayoutOrder = 1
+_2ToggleMenu.Position = UDim2.new(0, 171, 0, 4)
+_2ToggleMenu.Size = UDim2.new(0, 82, 0, 32)
+
+IconButton_3.Name = "IconButton"
+IconButton_3.Parent = _2ToggleMenu
+IconButton_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IconButton_3.BackgroundTransparency = 0.500
+IconButton_3.BorderSizePixel = 0
+IconButton_3.Size = UDim2.new(1, 0, 1, 0)
+IconButton_3.ZIndex = 10
+IconButton_3.AutoButtonColor = false
+IconButton_3.Text = ""
+IconButton_3.TextTransparency = 1.000
+
+IconImage.Name = "IconImage"
+IconImage.Parent = IconButton_3
+IconImage.AnchorPoint = Vector2.new(0, 0.5)
+IconImage.BackgroundTransparency = 1.000
+IconImage.Position = UDim2.new(0, 12, 0.5, 0)
+IconImage.Size = UDim2.new(0, 15, 0.629999995, 0)
+IconImage.ZIndex = 11
+IconImage.Image = "http://www.roblox.com/asset/?id=2246477671"
+IconImage.ScaleType = Enum.ScaleType.Fit
+
+IconLabel_3.Name = "IconLabel"
+IconLabel_3.Parent = IconButton_3
+IconLabel_3.AnchorPoint = Vector2.new(0, 0.5)
+IconLabel_3.BackgroundTransparency = 1.000
+IconLabel_3.ClipsDescendants = true
+IconLabel_3.Position = UDim2.new(0, 35, 0.5, 0)
+IconLabel_3.Size = UDim2.new(1, -47, 0.449999988, 7)
+IconLabel_3.ZIndex = 11
+IconLabel_3.Font = Enum.Font.GothamMedium
+IconLabel_3.Text = "Menu"
+IconLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+IconLabel_3.TextSize = 14.000
+IconLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+UICorner_3.Parent = IconButton_3
+IconButton_3.MouseButton1Click:Connect(function()
+    for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do
+        if v:FindFirstChild("main") then
+            v.main.Visible = not v.main.Visible
+        end
+    end
+end)
+
+RainbowText(IconLabel_3)
+RainbowImage(IconImage)
+
+local script = Instance.new("LocalScript")
+script.Parent = GuiStat
+local labels = script.Parent
+local RS = game:GetService("RunService")
+local frames = 0
+RS.RenderStepped:Connect(function()
+    frames = frames + 1
+end)
+
+task.spawn(function()
+    pcall(function()
+        while wait(1) do
+            pcall(function()
+                if (tonumber(frames) < 10) then
+                    labels.Frame["1FPSCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+                elseif (tonumber(frames) <= 30) then
+                    labels.Frame["1FPSCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+                elseif (tonumber(frames) > 30) then
+                    labels.Frame["1FPSCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+                end
+                labels.Frame["1FPSCount"].IconButton.IconLabel.Text = "FPS " .. frames
+                frames = 0
+                local ping = math.round(tonumber(string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), "(")[1]))
+                labels.Frame["3PingCount"].IconButton.IconLabel.Text = "Ping: " .. ping .. " ms"
+                if (ping < 100) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+                elseif (ping < 200) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+                elseif (ping < 300) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 150, 0)
+                elseif (ping < 400) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 100, 0)
+                elseif (ping < 500) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+                end
+            end)
+        end
+    end)
+end)
+end
 if game:GetService("UserInputService").TouchEnabled == true then
 return loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/GUI56"))()
 else
